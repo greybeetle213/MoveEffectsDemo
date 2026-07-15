@@ -1,0 +1,137 @@
+{
+    "structure": [
+        {
+            "name": "waterbending",
+            "conditions": {
+                "not": {
+                    "or": [
+                        {"hasStates": ["flicked"]},
+                        {"hasStates": ["held"]},
+                        {"hasStates": ["onFloor"]}
+                    ]
+                },
+                "speed": {
+                    "min": 1
+                },
+                "touchingStructures": [
+                    {"or":
+                        [
+                            {"hasStates":["flicked"]},
+                            {"hasStates": ["held"]}
+                        ]    
+                    }
+                ]
+            },
+            "whileAdded": {
+                "displayPrefab": {
+                    "assetBundle": "waterparticles",
+                    "prefab": "Particle System",
+                    "destroyTime": 0.3,
+                    "scale": {"x":0.15, "y":0.15, "z":0.15}
+                },
+                "playSound": "water.wav"
+            }
+        },
+        {
+            "name": "excalaburBottom",
+            "startConditions": {
+                "touchingStructures": [
+                    {
+                        "structureType": "Wall",
+                        "hasStates": ["flicked"],
+                        "not": {
+                            "or": [
+                                {"hasStates": ["held"]},
+                                {"hasTags": ["excalaburBottom"]}
+                            ]
+                        },
+                        "position": {
+                            "min": 2,
+                            "relative": "true"
+                        },
+                        "verticalPosition": {
+                            "min": 0,
+                            "relative": "true"
+                        }
+                    }
+                ]
+            },
+            "conditions": {
+                "hasStates": ["flicked"],
+                "not": {
+                    "hasStates": ["held"]
+                },
+                "touchingStructures": [
+                    {
+                        "structureType": "Wall",
+                        "hasStates": ["flicked"],
+                        "not": {
+                            "or": [
+                                {"hasStates": ["held"]},
+                                {"hasTags": ["excalaburBottom"]}
+                            ]
+                        },
+                        "position": {
+                            "min": 2,
+                            "relative": "true"
+                        }
+                    }
+                ]
+            },
+            "onAdded": {
+                "playSound": "sword_unsheathing.wav"
+            },
+            "whileAdded": {
+                "displayPrefab": {
+                    "assetBundle": "excalabur",
+                    "prefab": "hilt",
+                    "scale": {"x":0.7, "y": 0.7, "z":0.7},
+                    "position":{"y":-2.35},
+                    "rotation":{"y":90}
+                }
+            }
+        },
+        {
+            "name": "magic missile",
+            "startConditions": {
+                "combo": "UKS"
+            },
+            "conditions": {
+                "speed": {"min": 2},
+                "structureType": "Pillar"
+            },
+            "onAdded": {
+                "playSound": "missile_launch.wav"
+            },
+            "whileAdded": {
+                "displayPrefab": {
+                    "assetBundle": "magicmissile",
+                    "prefab": "Trail",
+                    "scale": {"x":3, "y":3, "z":3},
+                    "position": {"y": -1}
+                },
+                "playSound": "missile_flight.wav"
+            },
+            "onDestroyed": {
+                "displayPrefab": {
+                    "assetBundle": "magicmissile",
+                    "prefab": "explosion",
+                    "scale": {"x":0.3, "y":0.3, "z":0.3},
+                    "position": {"y":-1},
+                    "rotation": {"x":90},
+                    "destroyTime": 2
+                },
+                "playSound": "missile_explode.wav"
+            }
+        },
+        {
+            "name": "test",
+            "startConditions": {
+                "hasStates": ["ownerChanged"]
+            },
+            "whileAdded": {
+                "displayText": "ownerChanged"
+            }
+        }
+    ]
+}
