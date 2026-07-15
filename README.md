@@ -45,7 +45,7 @@ In the moves.json file, make a list for each (assuming you want to use both stru
 ### displayPrefab:<br>
 **assetBundle** - Path to an asset bundle<br>
 **prefab** - The prefab from the asset bundle to use<br>
-**scale** - Change the scale of the object. Thi has properties x,y,z<br>
+**scale** - Change the scale of the object. This has properties x,y,z<br>
 **position**<br>
 **rotation**<br>
 **destroyTime** - How long the prefab should be displayed for if it is in onAdded or onDestroyed, and how long it should stay around after the tag is removed if it is in whileAdded.<br>
