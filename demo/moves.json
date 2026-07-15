@@ -33,7 +33,7 @@
             }
         },
         {
-            "name": "excalaburBottom",
+            "name": "excalaburTop",
             "startConditions": {
                 "touchingStructures": [
                     {
@@ -42,7 +42,7 @@
                         "not": {
                             "or": [
                                 {"hasStates": ["held"]},
-                                {"hasTags": ["excalaburBottom"]}
+                                {"hasTags": ["excalaburTop"]}
                             ]
                         },
                         "position": {
@@ -50,7 +50,7 @@
                             "relative": "true"
                         },
                         "verticalPosition": {
-                            "min": 0,
+                            "max": 0,
                             "relative": "true"
                         }
                     }
@@ -68,7 +68,7 @@
                         "not": {
                             "or": [
                                 {"hasStates": ["held"]},
-                                {"hasTags": ["excalaburBottom"]}
+                                {"hasTags": ["excalaburTop"]}
                             ]
                         },
                         "position": {
@@ -86,8 +86,8 @@
                     "assetBundle": "excalabur",
                     "prefab": "hilt",
                     "scale": {"x":0.7, "y": 0.7, "z":0.7},
-                    "position":{"y":-2.35},
-                    "rotation":{"y":90}
+                    "position":{"y":2.35},
+                    "rotation":{"x":180, "y":90}
                 }
             }
         },
@@ -122,15 +122,6 @@
                     "destroyTime": 2
                 },
                 "playSound": "missile_explode.wav"
-            }
-        },
-        {
-            "name": "test",
-            "startConditions": {
-                "hasStates": ["ownerChanged"]
-            },
-            "whileAdded": {
-                "displayText": "ownerChanged"
             }
         }
     ]
