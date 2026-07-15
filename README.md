@@ -41,6 +41,7 @@ In the moves.json file, make a list for each (assuming you want to use both stru
 
 ## Effects:
 **playSound** - The path to a .wav file. If there is no slash in the name this is calculated from the directory the move.json file is in. Otherwise it is from UserData/MoveEffects. If in whileAdded, the sound will be played on loop and stopped instantly when the tag is removed.<br>
+**displayText** - only works in whileAdded and is mostly there to be used as a placeholder<br>
 ### displayPrefab:<br>
 **assetBundle** - Path to an asset bundle<br>
 **prefab** - The prefab from the asset bundle to use<br>
@@ -48,6 +49,7 @@ In the moves.json file, make a list for each (assuming you want to use both stru
 **position**<br>
 **rotation**<br>
 **destroyTime** - How long the prefab should be displayed for if it is in onAdded or onDestroyed, and how long it should stay around after the tag is removed if it is in whileAdded.<br>
+
 <br>
 
 ## Player Tag:
