@@ -4,12 +4,12 @@ There are two types of tags, structure and player.
 In the moves.json file, make a list for each (assuming you want to use both structure and player tags):
 ```
 {
-	"structures": [],
-	"players": []
+	"structure": [],
+	"player": []
 }
 ```
-**structures** - A list of structure tags. <br>
-**players** - A list of player tags.<br>
+**structure** - A list of structure tags. <br>
+**player** - A list of player tags.<br>
 ## Structure Tags: 
 (all optional except "name")<br>
 **name** - The name of the tag. When being read, the name of the folder it is stored in is appended to the front. (ie. the tag "mount" in the folder "excalabur" would be changed to "excalabur/mount". You can refer to this as "mount" from other tags in excalabur, but from another folder you would have to type "excalabur/mount".<br>
